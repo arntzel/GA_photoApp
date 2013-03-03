@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "TableViewController.h"
+#import "BFAWSManager.h"
 
 @interface ViewController ()
 
@@ -90,6 +91,9 @@
     UIImage *filteredImage = [self effects:originalImage];
     [_photoFeed insertObject:filteredImage atIndex:0];
     _imageView.image = filteredImage;
+    
+    NSData *uploadedData = UIImageJPEGRepresentation(filteredImage, 0.6f);
+    [BFAWSManager uploadFileWithData:uploadedData named:@"MDP"];
     
     NSLog(@"this is my photo feed: %@",_photoFeed);
 
