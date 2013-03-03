@@ -16,13 +16,16 @@
 @property (strong, nonatomic) IBOutlet UIButton *mainButton;
 
 - (IBAction)buttonPressed:(UIButton *)sender;
-
+//properties
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-- (IBAction)takePhotoPressed:(UIButton *)sender;
-
-
 @property (assign, nonatomic) int numberOfTimesButtonPressed;
+
+@property (strong, nonatomic) NSMutableArray *photoFeed;
+
+
+//methods
+- (IBAction)takePhotoPressed:(UIButton *)sender;
 
 
 

@@ -7,12 +7,17 @@
 //
 
 #import "ViewController.h"
+#import "TableViewController.h"
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+//    CIContext *context;
+//    CIFilter *filter;
+//    CIImage *beginImage;
+}
 
 - (void)viewDidLoad
 {
@@ -25,10 +30,9 @@
     _numberOfTimesButtonPressed = 0;
     _textField.delegate = self;
     
-    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 100, 100, 50)];
-    myLabel.text = @"custom label";
-    myLabel.textColor = [UIColor greenColor];
-    [self.view addSubview:myLabel];
+    _photoFeed = [[NSMutableArray alloc]init];
+    
+    
 }
 
 - (IBAction)buttonPressed:(UIButton *)sender {
@@ -80,11 +84,67 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     UIImage *originalImage = (UIImage *)[info objectForKey:UIImagePickerControllerOriginalImage];
-    _imageView.image = originalImage;
+    
+    //_imageView.image = originalImage;
+    
+    UIImage *filteredImage = [self effects:originalImage];
+    [_photoFeed insertObject:filteredImage atIndex:0];
+    _imageView.image = filteredImage;
+    
+    NSLog(@"this is my photo feed: %@",_photoFeed);
+
+
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     
 }
+
+#pragma mark - Photo Effects
+
+/*
+ 
+ Create a CIImage object. CIImage has the following initialization methods: imageWithURL, imageWithData, imageWithCVPixelBuffer, and imageWithBitmapData:bytesPerRow:size:format:colorSpace. You’ll most likely be working with imageWithURL most of the time.
+ Create a CIContext. A CIContext can be CPU or GPU based.
+ Create a CIFilter. When you create the filter, you configure a number of properties on it, that depend on the filter you’re using.
+ Get the filter output. The filter gives you an output image as a CIImage – you can convert this to a UIImage using the CIContext, as you’ll see below.
+ */
+
+//CIImage. This class hold the image data. It can be creating from a UIImage, from an image file, or from pixel data.
+
+
+//CIContext. All of the processing of a core image is done in a CIContext. This is somewhat similar to a Core Graphics or OpenGL context.
+
+
+//CIFilter. The filter class has a dictionary that defines the attributes of the particular filter that it represents. Examples of filters are vibrance filters, color inversion filters, cropping filters, and much more.
+
+//CIVignette - Reduces the brightness of an image at the periphery.
+//CIUnsharpMask - Increases the contrast of the edges between pixels of different colors in an image.
+//CIStraightenFilter - Rotates the source image by the specified angle in radians.
+//CISepiaTone - Maps the colors of an image to various shades of brown.
+//import the coreimage framework
+-(UIImage *)effects:(UIImage *)photoImage {
+    
+    NSLog(@"%@",photoImage);
+    CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(photoImage)];
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIFilter *filter = [CIFilter filterWithName:@"CIVignette"
+                                  keysAndValues: kCIInputImageKey, beginImage,
+                        @"inputIntensity", [NSNumber numberWithFloat:0.2], nil];
+    CIImage *outputImage = [filter outputImage];
+    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    photoImage = [UIImage imageWithCGImage:cgimg];
+    
+    return photoImage;
+}
+
+#pragma mark Transitions
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    TableViewController *tableView = [segue destinationViewController];
+    tableView.photoArray = _photoFeed;
+}
+
 @end

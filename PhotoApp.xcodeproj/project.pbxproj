@@ -18,6 +18,10 @@
 		C4D91C9816E28E0F00B8E383 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4D91C9716E28E0F00B8E383 /* Default-568h@2x.png */; };
 		C4D91C9B16E28E0F00B8E383 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D91C9916E28E0F00B8E383 /* MainStoryboard.storyboard */; };
 		C4D91C9E16E28E0F00B8E383 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D91C9D16E28E0F00B8E383 /* ViewController.m */; };
+		C4D91CD016E3096F00B8E383 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D91CCF16E3096F00B8E383 /* CoreImage.framework */; };
+		C4D91D1A16E3B49600B8E383 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D91D1916E3B49600B8E383 /* TableViewController.m */; };
+		C4D91D1D16E3DCD200B8E383 /* AWSiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D91D1C16E3DCD200B8E383 /* AWSiOSSDK.framework */; };
+		C4D91D2016E3DDF000B8E383 /* BFAWSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D91D1F16E3DDF000B8E383 /* BFAWSManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,12 @@
 		C4D91C9A16E28E0F00B8E383 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C4D91C9C16E28E0F00B8E383 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C4D91C9D16E28E0F00B8E383 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C4D91CCF16E3096F00B8E383 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		C4D91D1816E3B49600B8E383 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		C4D91D1916E3B49600B8E383 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		C4D91D1C16E3DCD200B8E383 /* AWSiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSiOSSDK.framework; sourceTree = "<group>"; };
+		C4D91D1E16E3DDF000B8E383 /* BFAWSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BFAWSManager.h; path = ../BFAWSManager.h; sourceTree = "<group>"; };
+		C4D91D1F16E3DDF000B8E383 /* BFAWSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BFAWSManager.m; path = ../BFAWSManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +54,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4D91CD016E3096F00B8E383 /* CoreImage.framework in Frameworks */,
 				C4D91C8216E28E0F00B8E383 /* UIKit.framework in Frameworks */,
 				C4D91C8416E28E0F00B8E383 /* Foundation.framework in Frameworks */,
 				C4D91C8616E28E0F00B8E383 /* CoreGraphics.framework in Frameworks */,
+				C4D91D1D16E3DCD200B8E383 /* AWSiOSSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,9 +85,11 @@
 		C4D91C8016E28E0F00B8E383 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4D91D1C16E3DCD200B8E383 /* AWSiOSSDK.framework */,
+				C4D91CCF16E3096F00B8E383 /* CoreImage.framework */,
+				C4D91C8516E28E0F00B8E383 /* CoreGraphics.framework */,
 				C4D91C8116E28E0F00B8E383 /* UIKit.framework */,
 				C4D91C8316E28E0F00B8E383 /* Foundation.framework */,
-				C4D91C8516E28E0F00B8E383 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -83,11 +97,12 @@
 		C4D91C8716E28E0F00B8E383 /* PhotoApp */ = {
 			isa = PBXGroup;
 			children = (
+				C4D91D1B16E3B4AD00B8E383 /* ViewControllers */,
 				C4D91C9016E28E0F00B8E383 /* AppDelegate.h */,
 				C4D91C9116E28E0F00B8E383 /* AppDelegate.m */,
 				C4D91C9916E28E0F00B8E383 /* MainStoryboard.storyboard */,
-				C4D91C9C16E28E0F00B8E383 /* ViewController.h */,
-				C4D91C9D16E28E0F00B8E383 /* ViewController.m */,
+				C4D91D1E16E3DDF000B8E383 /* BFAWSManager.h */,
+				C4D91D1F16E3DDF000B8E383 /* BFAWSManager.m */,
 				C4D91C8816E28E0F00B8E383 /* Supporting Files */,
 			);
 			path = PhotoApp;
@@ -105,6 +120,17 @@
 				C4D91C9716E28E0F00B8E383 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4D91D1B16E3B4AD00B8E383 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4D91D1816E3B49600B8E383 /* TableViewController.h */,
+				C4D91D1916E3B49600B8E383 /* TableViewController.m */,
+				C4D91C9C16E28E0F00B8E383 /* ViewController.h */,
+				C4D91C9D16E28E0F00B8E383 /* ViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +202,8 @@
 				C4D91C8E16E28E0F00B8E383 /* main.m in Sources */,
 				C4D91C9216E28E0F00B8E383 /* AppDelegate.m in Sources */,
 				C4D91C9E16E28E0F00B8E383 /* ViewController.m in Sources */,
+				C4D91D1A16E3B49600B8E383 /* TableViewController.m in Sources */,
+				C4D91D2016E3DDF000B8E383 /* BFAWSManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +282,10 @@
 		C4D91CA216E28E0F00B8E383 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoApp/PhotoApp-Prefix.pch";
 				INFOPLIST_FILE = "PhotoApp/PhotoApp-Info.plist";
@@ -265,6 +297,10 @@
 		C4D91CA316E28E0F00B8E383 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PhotoApp/PhotoApp-Prefix.pch";
 				INFOPLIST_FILE = "PhotoApp/PhotoApp-Info.plist";
@@ -292,6 +328,7 @@
 				C4D91CA316E28E0F00B8E383 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
