@@ -10,9 +10,13 @@
 
 @interface TableViewController ()
 
+-(void)thisIsAPrivateMethod;
+
 @end
 
-@implementation TableViewController
+@implementation TableViewController{
+    
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -21,11 +25,16 @@
         // Custom initialization
     }
     return self;
+    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSArray *myArray = @[@"hello"];
+    
+    NSString *myString = [NSString stringWithFormat:@"%@",myArray];
     
     _tableArray = [[NSMutableArray alloc]initWithObjects:@"Photo 1", @"Photo 2", @"Photo 3",@"Photo 4", nil];
     
