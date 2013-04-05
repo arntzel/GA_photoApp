@@ -8,17 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface PhotoViewController : UIViewController
 <UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
-@property (strong, nonatomic) IBOutlet UIButton *mainButton;
-- (IBAction)pressedGetPhotos:(UIButton *)sender;
 
-- (IBAction)buttonPressed:(UIButton *)sender;
 //properties
-@property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (assign, nonatomic) int numberOfTimesButtonPressed;
 
