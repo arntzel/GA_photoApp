@@ -167,7 +167,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create Account" id="9gg-2O-sn4">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="bYc-E4-pqG"/>
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="Uz5-Fp-gQ3"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="bYc-E4-pqG">
+                            <connections>
+                                <action selector="createBarButtonPressed:" destination="z1a-KN-Vaw" id="XNS-EP-nW8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -177,66 +182,11 @@
                         <outlet property="firstNameTextField" destination="DcA-mz-e6l" id="dNl-Rq-1kK"/>
                         <outlet property="lastNameTextField" destination="mYa-a8-iCY" id="y68-oD-s5u"/>
                         <outlet property="passwordTextField" destination="psP-4Q-4RF" id="gOK-Ak-UKo"/>
-                        <segue destination="1Rb-xG-5GY" kind="push" id="3lb-bC-HHR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTn-0Z-VrR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-610" y="-872"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="H3h-Uh-nl3">
-            <objects>
-                <viewController id="1Rb-xG-5GY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="58n-dH-rl6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="First Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4i-lx-3M2">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Last Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8z-B2-5NB">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfP-hT-Pw9">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7g-0D-yC8">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Confirm Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWW-Z7-Ats">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="wWW-Z7-Ats" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="A34-Rr-BrG"/>
-                            <constraint firstItem="C4i-lx-3M2" firstAttribute="top" secondItem="58n-dH-rl6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="GiA-CD-hLh"/>
-                            <constraint firstAttribute="trailing" secondItem="l7g-0D-yC8" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="JVJ-ck-c9N"/>
-                            <constraint firstItem="wWW-Z7-Ats" firstAttribute="top" secondItem="l7g-0D-yC8" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="T99-xA-Ba0"/>
-                            <constraint firstItem="C4i-lx-3M2" firstAttribute="leading" secondItem="58n-dH-rl6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Too-Fs-bJ3"/>
-                            <constraint firstAttribute="trailing" secondItem="AfP-hT-Pw9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZCk-kZ-bZA"/>
-                            <constraint firstAttribute="trailing" secondItem="g8z-B2-5NB" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="egb-Yo-eha"/>
-                            <constraint firstItem="g8z-B2-5NB" firstAttribute="top" secondItem="58n-dH-rl6" secondAttribute="top" constant="20" symbolic="YES" type="default" id="g7J-mT-jta"/>
-                            <constraint firstItem="l7g-0D-yC8" firstAttribute="top" secondItem="AfP-hT-Pw9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nLQ-4Y-Qb0"/>
-                            <constraint firstItem="AfP-hT-Pw9" firstAttribute="top" secondItem="g8z-B2-5NB" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="we1-M1-IoP"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Zvo-RP-a0o"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YXs-ta-bAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-193" y="-872"/>
         </scene>
         <!--Photo View Controller - Photo-->
         <scene sceneID="5">
@@ -583,6 +533,7 @@
         <class className="CreateAccountViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateAccountViewController.h"/>
             <relationships>
+                <relationship kind="action" name="createBarButtonPressed:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="biographyTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="confirmPasswordTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
@@ -612,13 +563,8 @@
         <class className="PhotoViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="pressedGetPhotos:" candidateClass="UIButton"/>
                 <relationship kind="action" name="takePhotoPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="mainButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="ProfileViewController" superclassName="UIViewController">

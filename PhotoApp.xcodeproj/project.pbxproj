@@ -158,14 +158,14 @@
 		C4D91D1B16E3B4AD00B8E383 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C4D91C9C16E28E0F00B8E383 /* PhotoViewController.h */,
-				C4D91C9D16E28E0F00B8E383 /* PhotoViewController.m */,
-				C45BB483170E8821001E8EE2 /* CreateAccountViewController.h */,
-				C45BB484170E8821001E8EE2 /* CreateAccountViewController.m */,
 				C45BB4BA170F2757001E8EE2 /* SignInViewController.h */,
 				C45BB4BB170F2758001E8EE2 /* SignInViewController.m */,
+				C45BB483170E8821001E8EE2 /* CreateAccountViewController.h */,
+				C45BB484170E8821001E8EE2 /* CreateAccountViewController.m */,
 				C417E116170F65860082EAF2 /* HomeViewController.h */,
 				C417E117170F65860082EAF2 /* HomeViewController.m */,
+				C4D91C9C16E28E0F00B8E383 /* PhotoViewController.h */,
+				C4D91C9D16E28E0F00B8E383 /* PhotoViewController.m */,
 				C417E119170F65990082EAF2 /* EditPhotoViewController.h */,
 				C417E11A170F65990082EAF2 /* EditPhotoViewController.m */,
 				C417E11C170F65AB0082EAF2 /* ProfileViewController.h */,

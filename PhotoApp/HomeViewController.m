@@ -51,7 +51,7 @@
 
 - (IBAction)profileButtonPressed:(UIButton *)sender {
     
-    [self performSegueWithIdentifier:@" sender:<#(id)#>]
+    [self performSegueWithIdentifier:@"profileSegue" sender:nil];
     
 }
 @end

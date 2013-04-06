@@ -17,4 +17,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
 @property (strong, nonatomic) IBOutlet UITextView *biographyTextView;
 
+- (IBAction)createBarButtonPressed:(UIBarButtonItem *)sender;
+
 @end

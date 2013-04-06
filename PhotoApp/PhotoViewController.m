@@ -19,16 +19,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    NSLog(@"view %@", self.view);
-    
-    
     _photoFeed = [[NSMutableArray alloc]init];
-    _s3Files = [[NSMutableArray alloc]init];
 }
-
-
-
-
 
 - (IBAction)takePhotoPressed:(UIButton *)sender {
     
@@ -76,6 +68,7 @@
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Photo Effects
@@ -83,7 +76,6 @@
 
 -(UIImage *)effects:(UIImage *)photoImage {
     
-    NSLog(@"%@",photoImage);
     CIImage *beginImage = [CIImage imageWithData: UIImagePNGRepresentation(photoImage)];
     CIContext *context = [CIContext contextWithOptions:nil];
     CIFilter *filter = [CIFilter filterWithName:@"CIVignette"

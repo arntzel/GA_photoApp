@@ -40,6 +40,7 @@
 #pragma mark - TextField Delegate
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    
     NSLog(@"textFIeldShouldReturn");
     [_firstNameTextField resignFirstResponder];
     [_lastNameTextField resignFirstResponder];
@@ -52,4 +53,9 @@
 }
 
 
+- (IBAction)createBarButtonPressed:(UIBarButtonItem *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 @end
