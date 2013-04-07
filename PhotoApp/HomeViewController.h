@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *photoStreamTableView;
 
 - (IBAction)logOutPressed:(UIBarButtonItem *)sender;
 - (IBAction)cameraButtonPressed:(UIButton *)sender;
 - (IBAction)profileButtonPressed:(UIButton *)sender;
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end

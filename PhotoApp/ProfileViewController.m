@@ -27,6 +27,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *firstName = [defaults objectForKey:@"userFirstName"];
+    NSString *biography = [defaults objectForKey:@"userBiography"];
+
+    _nameLabel.text = firstName;
+    _biography.text = biography;
+    
+    NSArray *users = [User findAll];
+    for (int x = 0; x < users.count; x ++){
+        User *user = [users objectAtIndex:x];
+        if ([user.email isEqualToString:[defaults objectForKey:@"userEmail" ]]){
+        _profileImage.image = user.profileImage;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

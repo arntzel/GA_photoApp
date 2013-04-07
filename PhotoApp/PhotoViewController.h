@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
+#import "UserPhoto.h"
 
 @interface PhotoViewController : UIViewController
 <UITextFieldDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -15,16 +17,14 @@
 
 //properties
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-@property (assign, nonatomic) int numberOfTimesButtonPressed;
-
-@property (strong, nonatomic) NSMutableArray *photoFeed;
-@property (strong, nonatomic) NSMutableArray *s3Files;
-
+@property (strong, nonatomic) IBOutlet UITextField *tagTextField;
 
 //methods
 - (IBAction)takePhotoPressed:(UIButton *)sender;
 
+- (IBAction)addFilterButtonPressed:(UIButton *)sender;
 
+- (IBAction)saveButtonPressed:(UIButton *)sender;
 
 
 

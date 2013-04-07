@@ -12,6 +12,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //don't forget to add Core Data framework.
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+    
     // Override point for customization after application launch.
     return YES;
 }

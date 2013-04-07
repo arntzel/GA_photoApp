@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    _photoStreamTableView.delegate = self;
+    _photoStreamTableView.dataSource = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,4 +58,37 @@
     [self performSegueWithIdentifier:@"profileSegue" sender:nil];
     
 }
+
+#pragma mark -
+#pragma mark Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+	
+    UIImage *image = [[UIImage alloc] init];
+    
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+//    imageView.backgroundColor = [UIColor greenColor];
+    
+	cell.imageView.image = image;
+    
+    return cell;
+}
+
 @end
